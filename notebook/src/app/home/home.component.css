@@ -1,47 +1,117 @@
-.note-cover{
+.note-cover {
     height: calc(100vh - 32px);
     background-color: #d8d8d852;
     border: 1px solid #2020201f;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(5px);
 }
 
-.notebook{
+.notebook {
     /* background: radial-gradient(circle, #fff8d5, #fde276); */
-    background: radial-gradient(circle, #fffef8, #dedede);
+    /* background: radial-gradient(circle, #fffef8, #dedede); */
+    /* background: radial-gradient(circle, #c2637a 30%, #950000); */
+        perspective: 1200px; /* parent handles perspective */
+    transform-style: preserve-3d;
 }
 
-.note-end{
+.note-end {
     border-right: 2px solid #a720201f;
     box-shadow: 2px 0 10px #20202064;
 }
 
-.ring{
+.ring {
     width: 40px;
     height: 25px;
     border-radius: 50%;
     box-shadow: 0px -8px #0c0c0c;
 }
 
-.box{
+.box {
     width: 10px;
     height: 25px;
     border-radius: 2px;
     background-color: #20202093;
     transform: translateY(-12px);
 }
-.box.right{
+
+.box.right {
     transform: translateY(-6px) translateX(300%);
 }
 
-.pick{
+.pick {
     cursor: grab;
 }
-.photo{
-    top: 100px;
-    transform: rotate(-5deg);
+
+.pick:hover {
+    transform: scale(1.2);
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 10px 20px #20202064;
 }
-.photo-1{
+
+.photo {
+    top: 100px;
+    transform: rotate(-3deg);
+}
+
+.photo-1 {
     top: 80px;
-    left: 260px;
-    transform: rotate(5deg);
+    left: 270px;
+    transform: rotate(4deg);
+}
+
+.right-page {
+    transform-origin: left center;
+    background: radial-gradient(circle at left center, #fffef8, #dedede);
+}
+
+.left-page {
+    transform-origin: right center;
+    background: radial-gradient(circle at right center, #fffef8, #dedede);
+}
+
+.right-page:hover {
+    cursor: grabbing;
+    animation: turnPage-right 1s ease-in-out forwards;
+    box-shadow: -8px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* .left-page:hover {
+    cursor: grabbing;
+    animation: turnPage-left 1s ease-in-out forwards;
+    box-shadow: 8px 0 15px rgba(0, 0, 0, 0.2);
+} */
+
+@keyframes turnPage-right {
+    0% {
+        transform: rotateY(0deg) translateZ(10px);
+    }
+
+    40% {
+        transform: rotateY(-90deg) translateZ(10px) rotateZ(-5deg);
+    }
+
+    70% {
+        transform: rotateY(-150deg) translateZ(10px);
+    }
+
+    100% {
+        transform: rotateY(-180deg) translateZ(10px);
+    }
+}
+
+@keyframes turnPage-left {
+    0% {
+        transform: rotateY(0deg) translateZ(10px);
+    }
+
+    40% {
+        transform: rotateY(90deg) translateZ(10px) rotateZ(5deg);
+    }
+
+    70% {
+        transform: rotateY(150deg) translateZ(10px);
+    }
+
+    100% {
+        transform: rotateY(180deg) translateZ(11px);
+    }
 }
