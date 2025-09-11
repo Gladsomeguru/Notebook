@@ -1,3 +1,4 @@
+
 html{
     box-sizing: border-box;
     height: 100%;
@@ -7,7 +8,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: #ebebeb;
-    background-image: url("/images/spiderbg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     font-family: cursive;
