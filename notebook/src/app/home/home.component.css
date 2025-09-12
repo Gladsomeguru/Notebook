@@ -47,12 +47,20 @@
     box-shadow: 0 10px 20px #20202064;
 }
 
-.photo{
-    aspect-ratio: 4/2;
-    max-width: 230px;
-    object-position: center;
+
+.sheet {
+  overflow: auto;   
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
 }
 
+.the-box{
+    columns: 150px;
+}
+.photo{
+  /* column-count: 3; */
+  /* height: fit-content; */
+}
 .photo.one {
     top: 100px;
     transform: rotate(-3deg);
@@ -72,6 +80,11 @@
 .left-page {
     transform-origin: right center;
     background: radial-gradient(circle at right center, #fffef8, #dedede);
+}
+
+
+.sheet::-webkit-scrollbar {
+  display: none;
 }
 
 /* .right-page:hover {
