@@ -56,11 +56,19 @@
 
 .the-box{
     columns: 150px;
+     column-gap: 8px;
 }
-.photo{
-  /* column-count: 3; */
-  /* height: fit-content; */
+.the-box .card {
+  break-inside: avoid;      /* modern */
+  page-break-inside: avoid; /* older browsers */
+  -webkit-column-break-inside: avoid; /* Safari/Chrome */
+  margin-bottom: 1rem;      /* spacing */
 }
+/* .photo{
+  max-width: 230px;
+  object-position: center;
+  aspect-ratio: 4/3;
+} */
 .photo.one {
     top: 100px;
     transform: rotate(-3deg);
