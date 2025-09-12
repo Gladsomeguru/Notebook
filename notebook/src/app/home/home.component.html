@@ -1,41 +1,46 @@
 <div class="container note-cover p-3 px-4 shadow-lg m-3 mx-auto rounded-4 overflow-x-hidden">
-    <div
-        class="row h-100 justify-content-center rounded-3 align-items-center position-relative overflow-hidden">
-        <div class="col-6 note-end h-100 p-4 left-page position-relative">
-            <div class="d-flex flex-column mt-3">
-                <ng-content *ngFor="let item of [].constructor(15)">
+    <div class="row h-100 justify-content-center rounded-3 align-items-center position-relative overflow-Y-hidden">
+        <div class="col-lg-6 note-end h-100  left-page position-relative" #page>
+            <div class="d-flex flex-column mt-3 px-lg-4 px-2 py-3 position-absolute end-0 w-100">
+                <p></p>
+                <ng-content *ngFor="let item of [].constructor(lineCount)">
                     <div class="lines border-0 border-bottom border-2 border-dark my-3">
                     </div>
                 </ng-content>
             </div>
-            <div class="card p-2 shadow-sm position-absolute photo m-2 pic" style="width: 14rem;">
-                <img src="images/spidy.jpg" alt="sample" class="card-img-top" />
-                <div class="card-body bg-light">
-                    <h6 class="card-title">Watched "Spiderman - home coming"</h6>
-                    <p class="card-text">Kamala Cineplex</p>
+            <div class="sheet position-relative w-100 overflow-x-auto h-100">
+                <div class="card p-2 shadow-sm position-absolute photo one m-2 pic">
+                    <img src="images/spidy.jpg" alt="sample" class="card-img-top" />
+                    <div class="card-body bg-light">
+                        <h6 class="card-title">Watched "Spiderman - home coming"</h6>
+                        <p class="card-text">Kamala Cineplex</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card p-2 shadow-sm position-absolute photo-1 m-2 pic" style="width: 14rem;">
-                <img src="images/milesandher.png" alt="sample" class="card-img-top" />
-                <div class="card-body bg-light">
-                    <h6 class="card-title">Sunflower❤️</h6>
+                <div class="card p-2 shadow-sm position-absolute photo two m-2 pic">
+                    <img src="images/milesandher.png" alt="sample" class="card-img-top" />
+                    <div class="card-body bg-light">
+                        <h6 class="card-title">Sunflower❤️</h6>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-6 shadow-sm h-100 p-4 right-page d-flex flex-column">
+        <div class="col-lg-6 shadow-sm h-100 p-4 right-page d-flex flex-column">
             <p class="fw-medium text-end mb-0">09/08/2025</p>
             <div class="d-flex flex-column">
-                <ng-content *ngFor="let item of [].constructor(14)">
+                <ng-content *ngFor="let item of [].constructor(lineCountRight)">
                     <div class="lines border-0 border-bottom border-2 border-dark my-3">
                     </div>
                 </ng-content>
+                <div class="lines border-0 border-bottom border-2 border-dark my-3 mb-2">
+                </div>
             </div>
             <div class="mt-auto float-bottom">
                 <p class="text-end mb-0">Page: 1</p>
             </div>
         </div>
-        <div class="position-absolute h-100 w-fit">
-            <div class="d-flex flex-column justify-content-between align-items-center mt-3 h-100 py-3 w-fit mx-auto">
+        <div class="position-absolute h-100 w-fit ring-box">
+            <div
+                class="d-flex flex-column justify-content-between align-items-lg-center align-items-start mt-3 h-100 py-3 w-fit mx-auto">
                 <ng-content *ngFor="let item of [].constructor(10)">
                     <div class="ring">
                         <div class="box position-absolute"></div>
@@ -46,10 +51,3 @@
         </div>
     </div>
 </div>
-<!-- <div class="container note-cover p-3 px-4 shadow-lg m-3 mx-auto rounded-4 overflow-x-hidden">
-    <div class="row h-100 justify-content-center rounded-3 align-items-center position-relative overflow-hidden">
-        <div class="col-6 ms-auto note-end h-100 p-4 right-page notebook">
-            <h1 class="fw-medium m-auto">My diary</h1>
-        </div>
-    </div>
-</div> -->

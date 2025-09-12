@@ -9,7 +9,7 @@
     /* background: radial-gradient(circle, #fff8d5, #fde276); */
     /* background: radial-gradient(circle, #fffef8, #dedede); */
     /* background: radial-gradient(circle, #c2637a 30%, #950000); */
-        perspective: 1200px; /* parent handles perspective */
+    perspective: 1200px; /* parent handles perspective */
     transform-style: preserve-3d;
 }
 
@@ -47,12 +47,18 @@
     box-shadow: 0 10px 20px #20202064;
 }
 
-.photo {
+.photo{
+    aspect-ratio: 4/2;
+    max-width: 230px;
+    object-position: center;
+}
+
+.photo.one {
     top: 100px;
     transform: rotate(-3deg);
 }
 
-.photo-1 {
+.photo.two {
     top: 80px;
     left: 270px;
     transform: rotate(4deg);
@@ -68,11 +74,11 @@
     background: radial-gradient(circle at right center, #fffef8, #dedede);
 }
 
-.right-page:hover {
+/* .right-page:hover {
     cursor: grabbing;
     animation: turnPage-right 1s ease-in-out forwards;
     box-shadow: -8px 0 15px rgba(0, 0, 0, 0.2);
-}
+} */
 
 /* .left-page:hover {
     cursor: grabbing;
@@ -114,4 +120,17 @@
     100% {
         transform: rotateY(180deg) translateZ(11px);
     }
+}
+
+@media screen and (max-width: 991px) {
+   .ring-box{
+    left: -40px;
+   }
+
+   .right-page{
+    position: absolute !important;
+    z-index: -1;
+    visibility: hidden;
+   }
+    
 }
